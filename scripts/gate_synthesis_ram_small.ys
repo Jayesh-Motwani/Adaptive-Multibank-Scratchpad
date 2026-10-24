@@ -1,0 +1,6 @@
+read_verilog rtl/sync_ram.v
+chparam -set DATA_WIDTH 1 -set ADDR_WIDTH 1 sync_ram
+synth -top sync_ram -flatten
+write_json results/netlist/sync_ram_2x1_gate.json
+write_verilog -noattr results/netlist/sync_ram_2x1_gate.v
+stat

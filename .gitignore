@@ -1,0 +1,15 @@
+.codex-finalizer
+*.codex-finalizer
+*.codex-finalizer/
+.chart-data-2UMVaI/
+.chart-data-2UMVaI
+.chart-data-CQAJcB/
+.chart-data-N5NfW5/
+.chart-data-orZdJX/
+tmp/
+.chart-data-VZdAil/
+.chart-data-xCPJXy/
+tools/
+*__pycache__/
+*build/
+*.log

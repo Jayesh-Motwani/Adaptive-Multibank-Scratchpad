@@ -1,0 +1,16 @@
+{
+  "legacy_regression_cases": 129,
+  "legacy_metrics_per_case": 13,
+  "lookahead_correctness_cases": 84,
+  "measurement_cases": 64,
+  "trace_service_checks": "all acceptance/completion intervals match unchanged targets",
+  "ideal_fifo_check": "all full-lookahead nonadaptive cases match independent finite-bank schedule",
+  "snapshot_sha256": "bc8f33dfeba81544172115849d3716294fb4a02f3488ebe727a6fc6dda04d300",
+  "source_sha256": {
+    "rtl\\scratchpad_controller.v": "f61b7ece9da622acbeb30fcba2591ff21ce7cdc0bb5ef9b6ac4729722dff1d17",
+    "rtl\\mac_engine.v": "e69c5ea6dd16026b1ca1be3fa87462d16c9e7378669fbc4d1dc239daeb9c6ed0",
+    "tb\\tb_controller.v": "1576e33b70245f5d8d886aa2e90ea995eb473cf6a533edb03b61bdf0c3d8a555",
+    "scripts\\evaluate_lookahead.py": "e69ab7d6642177277a8ebc2501fac56a67980e672e2449b2939c8c15eaa365dd",
+    "scripts\\run.py": "98ab02b0c71f5d8e93711b839a7c0e970099fd9e815efd00d5e25e1bf3d88098"
+  }
+}

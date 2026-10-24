@@ -1,0 +1,6 @@
+flowchart LR
+  SOURCE[Tile source] --> L[One transfer interface]
+  L --> S[Static tile ID modulo bank count]
+  S --> B[Bank array]
+  B --> Q[Strict tile order dispatch]
+  Q --> MAC[One MAC consumer]

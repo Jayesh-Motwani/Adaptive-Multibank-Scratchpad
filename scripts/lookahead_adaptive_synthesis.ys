@@ -1,0 +1,6 @@
+read_verilog rtl/sync_ram.v rtl/mac_engine.v rtl/scratchpad_controller.v
+chparam -set POLICY 4 -set NUMBER_OF_TILES 64 -set ADDR_WIDTH 2 -set LOOKAHEAD_LOAD 1 -set LOOKAHEAD_COMPUTE 1 scratchpad_controller
+synth -top scratchpad_controller -flatten
+write_json results/netlist/lookahead_adaptive_gate.json
+write_verilog -noattr results/netlist/lookahead_adaptive_gate.v
+stat

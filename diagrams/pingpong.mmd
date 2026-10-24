@@ -1,0 +1,9 @@
+flowchart LR
+  DRAM[External tile source] --> LOAD[Shared loader]
+  LOAD --> A[Bank A]
+  LOAD --> B[Bank B]
+  A --> MUX[Read mux]
+  B --> MUX
+  MUX --> MAC[MAC consumer]
+  A -. tile IDs 0,2,4 .- LOAD
+  B -. tile IDs 1,3,5 .- LOAD

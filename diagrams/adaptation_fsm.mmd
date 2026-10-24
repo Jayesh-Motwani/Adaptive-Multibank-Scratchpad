@@ -1,0 +1,9 @@
+stateDiagram-v2
+  [*] --> TWO
+  TWO --> THREE: stalls >= high
+  THREE --> FOUR: stalls >= high
+  FOUR --> THREE: stalls <= low
+  THREE --> TWO: stalls <= low
+  TWO --> TWO: otherwise
+  THREE --> THREE: otherwise
+  FOUR --> FOUR: otherwise

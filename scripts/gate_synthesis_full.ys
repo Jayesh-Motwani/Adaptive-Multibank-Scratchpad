@@ -1,0 +1,6 @@
+read_verilog rtl/sync_ram.v rtl/mac_engine.v rtl/scratchpad_controller.v
+chparam -set POLICY 4 -set NUMBER_OF_TILES 64 scratchpad_controller
+synth -top scratchpad_controller -flatten
+write_json results/netlist/scratchpad_gate.json
+write_verilog -noattr results/netlist/scratchpad_gate.v
+stat

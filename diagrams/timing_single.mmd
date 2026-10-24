@@ -1,0 +1,10 @@
+gantt
+  title Single buffer: no load/compute overlap
+  dateFormat X
+  axisFormat %s
+  section Loader
+  Tile 0 load: 0, 8
+  Tile 1 load: 16, 24
+  section MAC
+  Tile 0 compute: 8, 16
+  Tile 1 compute: 24, 32

@@ -1,0 +1,10 @@
+flowchart TD
+  STATS[Observation cycles and no-READY stall count] --> HYS[Hysteresis controller]
+  HYS --> LIMIT[active_bank_limit = 2, 3, or 4]
+  LIMIT --> SCHED[Existing availability-driven scheduler]
+  SOURCE[Tile source] --> LOAD[Shared loader]
+  LOAD --> SCHED
+  SCHED --> BANKS[Four physical scratchpad banks]
+  BANKS --> MAC[One synchronous-read MAC engine]
+  MAC --> STATS
+  MAC --> RESULT[Tile ID and verified result]

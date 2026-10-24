@@ -1,0 +1,250 @@
+{
+  "creator": "Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)",
+  "modules": {
+    "sync_ram": {
+      "attributes": {
+        "src": "rtl/sync_ram.v:2.1-11.10",
+        "top": "00000000000000000000000000000001",
+        "dynports": "00000000000000000000000000000001",
+        "hdlname": "sync_ram"
+      },
+      "parameter_default_values": {
+        "ADDR_WIDTH": "00000000000000000000000000000001",
+        "DATA_WIDTH": "00000000000000000000000000000001"
+      },
+      "ports": {
+        "clk": {
+          "direction": "input",
+          "bits": [ 2 ]
+        },
+        "wr_en": {
+          "direction": "input",
+          "bits": [ 3 ]
+        },
+        "wr_addr": {
+          "direction": "input",
+          "bits": [ 4 ]
+        },
+        "wr_data": {
+          "direction": "input",
+          "bits": [ 5 ]
+        },
+        "rd_en": {
+          "direction": "input",
+          "bits": [ 6 ]
+        },
+        "rd_addr": {
+          "direction": "input",
+          "bits": [ 7 ]
+        },
+        "rd_data": {
+          "direction": "output",
+          "bits": [ 8 ]
+        }
+      },
+      "cells": {
+        "$abc$137$auto$blifparse.cc:397:parse_blif$138": {
+          "hide_name": 1,
+          "type": "$_ANDNOT_",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 4 ],
+            "Y": [ 9 ]
+          }
+        },
+        "$abc$137$auto$blifparse.cc:397:parse_blif$139": {
+          "hide_name": 1,
+          "type": "$_MUX_",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10 ],
+            "B": [ 11 ],
+            "S": [ 7 ],
+            "Y": [ 12 ]
+          }
+        },
+        "$abc$137$auto$blifparse.cc:397:parse_blif$140": {
+          "hide_name": 1,
+          "type": "$_AND_",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 3 ],
+            "B": [ 4 ],
+            "Y": [ 13 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$130": {
+          "hide_name": 1,
+          "type": "$_DFFE_PP_",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 5 ],
+            "E": [ 13 ],
+            "Q": [ 11 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$131": {
+          "hide_name": 1,
+          "type": "$_DFFE_PP_",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 5 ],
+            "E": [ 9 ],
+            "Q": [ 10 ]
+          }
+        },
+        "$auto$ff.cc:337:slice$134": {
+          "hide_name": 1,
+          "type": "$_DFFE_PP_",
+          "parameters": {
+          },
+          "attributes": {
+          },
+          "port_directions": {
+            "C": "input",
+            "D": "input",
+            "E": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "C": [ 2 ],
+            "D": [ 12 ],
+            "E": [ 6 ],
+            "Q": [ 8 ]
+          }
+        }
+      },
+      "netnames": {
+        "$\\mem$rdreg[0]$d": {
+          "hide_name": 1,
+          "bits": [ 12 ],
+          "attributes": {
+          }
+        },
+        "$abc$137$memory\\mem$wren[0][0][0]$y$48": {
+          "hide_name": 1,
+          "bits": [ 9 ],
+          "attributes": {
+          }
+        },
+        "$abc$137$memory\\mem$wren[1][0][0]$y$54": {
+          "hide_name": 1,
+          "bits": [ 13 ],
+          "attributes": {
+          }
+        },
+        "clk": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "rtl/sync_ram.v:3.10-3.13"
+          }
+        },
+        "mem[0]": {
+          "hide_name": 0,
+          "bits": [ 10 ],
+          "attributes": {
+          }
+        },
+        "mem[1]": {
+          "hide_name": 0,
+          "bits": [ 11 ],
+          "attributes": {
+          }
+        },
+        "rd_addr": {
+          "hide_name": 0,
+          "bits": [ 7 ],
+          "attributes": {
+            "single_bit_vector": "00000000000000000000000000000001",
+            "src": "rtl/sync_ram.v:5.27-5.34"
+          }
+        },
+        "rd_data": {
+          "hide_name": 0,
+          "bits": [ 8 ],
+          "attributes": {
+            "single_bit_vector": "00000000000000000000000000000001",
+            "src": "rtl/sync_ram.v:5.64-5.71"
+          }
+        },
+        "rd_en": {
+          "hide_name": 0,
+          "bits": [ 6 ],
+          "attributes": {
+            "src": "rtl/sync_ram.v:4.42-4.47"
+          }
+        },
+        "wr_addr": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "single_bit_vector": "00000000000000000000000000000001",
+            "src": "rtl/sync_ram.v:3.51-3.58"
+          }
+        },
+        "wr_data": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "single_bit_vector": "00000000000000000000000000000001",
+            "src": "rtl/sync_ram.v:4.27-4.34"
+          }
+        },
+        "wr_en": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "rtl/sync_ram.v:3.21-3.26"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+read_json results/netlist/scratchpad_gate.json
+show -format dot -prefix results/netlist/scratchpad_gate_full

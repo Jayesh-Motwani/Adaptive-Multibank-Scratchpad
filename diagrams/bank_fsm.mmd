@@ -1,0 +1,6 @@
+stateDiagram-v2
+  [*] --> EMPTY
+  EMPTY --> LOADING: allocate EMPTY bank
+  LOADING --> READY: transfer complete
+  READY --> COMPUTING: dispatch MAC
+  COMPUTING --> EMPTY: MAC complete

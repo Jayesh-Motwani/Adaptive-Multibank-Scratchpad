@@ -1,0 +1,4 @@
+variant,generic_logic_register_cells,scope_metadata_records,register_bits,check_problems,inferred_latches,banks,bank_depth_words,tile_size,tiles,data_width,mem_target,compute_target
+original_fixed4,3477,5,595,0,0,4,4,4,64,8,8,8
+lookahead_fixed4,3609,5,600,0,0,4,4,4,64,8,8,8
+lookahead_adaptive,4713,5,864,0,0,4,4,4,64,8,8,8

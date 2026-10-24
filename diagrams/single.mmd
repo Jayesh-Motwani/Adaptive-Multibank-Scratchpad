@@ -1,0 +1,6 @@
+flowchart LR
+  DRAM[External tile source] --> LOAD[Shared loader]
+  LOAD --> BANK[One synchronous scratchpad bank]
+  BANK --> MAC[MAC consumer]
+  MAC --> OUT[Tile result]
+  NOTE[Bank must be EMPTY before load; LOAD and COMPUTE serialize]
