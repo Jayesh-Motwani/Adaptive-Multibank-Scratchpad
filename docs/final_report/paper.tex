@@ -143,7 +143,7 @@ their next descriptors.
 
 \begin{figure*}[t]
 \centering
-\includegraphics[width=.86\textwidth]{paper_architecture.pdf}
+\includegraphics[width=.86\textwidth]{paper_architecture.jpg}
 \caption{Implemented data path and runtime control. One loader and one MAC
 are shared across four physical RAM banks. The mode controller changes only
 which EMPTY banks may receive new tiles; the arbiter may still dispatch a
@@ -163,7 +163,7 @@ release and descriptor acceptance on the same edge.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.96\columnwidth]{paper_bank_state_machine.pdf}
+\includegraphics[width=.96\columnwidth]{paper_bank_state_machine.jpg}
 \caption{Logical per-bank state transitions. Look-ahead scheduling can
 combine completion and the next acceptance at one edge; an unfinished tile
 is never overwritten.}
@@ -218,7 +218,7 @@ Only comparisons and a one-step increment or decrement are required in RTL.
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=.98\columnwidth]{paper_mode_state_machine.pdf}
+\includegraphics[width=.98\columnwidth]{paper_mode_state_machine.jpg}
 \caption{Hysteresis state machine. $S$ is the accumulated no-READY count
 over one observation window; each transition changes the allocation limit
 by exactly one bank.}

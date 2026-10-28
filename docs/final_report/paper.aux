@@ -15,35 +15,35 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Completion-Aware Look-Ahead Handoffs}{2}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Storage and control scope of related accelerator designs. Published performance values refer to their respective workloads and platforms; they do not form a common numerical comparison.}}{3}{}\protected@file@percent }
 \newlabel{tab:prior}{{1}{3}{}{table.1}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Controlled policy distinction. All policies use the same RAM, operands, loader, MAC, and tile stream. ``Limit'' affects only new load allocations.}}{3}{}\protected@file@percent }
-\newlabel{tab:policies}{{2}{3}{}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Implemented data path and runtime control. One loader and one MAC are shared across four physical RAM banks. The mode controller changes only which EMPTY banks may receive new tiles; the arbiter may still dispatch a READY tile from any bank. Blue arrows carry data; orange arrows carry control or feedback.}}{3}{}\protected@file@percent }
+\newlabel{fig:arch}{{1}{3}{}{figure.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Logical per-bank state transitions. Look-ahead scheduling can combine completion and the next acceptance at one edge; an unfinished tile is never overwritten.}}{3}{}\protected@file@percent }
+\newlabel{fig:bankfsm}{{2}{3}{}{figure.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Cycle Accounting and Metrics}{3}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Hysteresis state machine. $S$ is the accumulated no-READY count over one observation window; each transition changes the allocation limit by exactly one bank.}}{3}{}\protected@file@percent }
+\newlabel{fig:modefsm}{{3}{3}{}{figure.3}{}}
 \newlabel{eq:metrics}{{3}{3}{}{equation.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Control Invariants and Implementation Cost}{3}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Logic Synthesis}{3}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Implemented data path and runtime control. One loader and one MAC are shared across four physical RAM banks. The mode controller changes only which EMPTY banks may receive new tiles; the arbiter may still dispatch a READY tile from any bank. Blue arrows carry data; orange arrows carry control or feedback.}}{4}{}\protected@file@percent }
-\newlabel{fig:arch}{{1}{4}{}{figure.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Logical per-bank state transitions. Look-ahead scheduling can combine completion and the next acceptance at one edge; an unfinished tile is never overwritten.}}{4}{}\protected@file@percent }
-\newlabel{fig:bankfsm}{{2}{4}{}{figure.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Controlled policy distinction. All policies use the same RAM, operands, loader, MAC, and tile stream. ``Limit'' affects only new load allocations.}}{4}{}\protected@file@percent }
+\newlabel{tab:policies}{{2}{4}{}{table.2}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pseudocode of the window update and bank eligibility. The RTL implements this with nonblocking sequential state updates; the count includes the event on the closing clock.}}{4}{}\protected@file@percent }
+\newlabel{alg:mode}{{4}{4}{}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}Control Invariants and Implementation Cost}{4}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Generic synthesis results under matched hardware and workload parameters. Register bits are included in the cell totals.}}{4}{}\protected@file@percent }
 \newlabel{tab:synthesis}{{3}{4}{}{table.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Hysteresis state machine. $S$ is the accumulated no-READY count over one observation window; each transition changes the allocation limit by exactly one bank.}}{4}{}\protected@file@percent }
-\newlabel{fig:modefsm}{{3}{4}{}{figure.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Verification and Experimental Setup}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}RTL Workload and Correctness Checks}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Pseudocode of the window update and bank eligibility. The RTL implements this with nonblocking sequential state updates; the count includes the event on the closing clock.}}{5}{}\protected@file@percent }
-\newlabel{alg:mode}{{4}{5}{}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Logic Synthesis}{4}{}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Loader and MAC execution for Fixed 4 and the proposed controller under the balanced workload. Each interval corresponds to an eight-clock tile operation. The proposed handoffs eliminate the three-clock MAC gap and the one-clock loader handoff gap.}}{5}{}\protected@file@percent }
+\newlabel{fig:handoff}{{5}{5}{}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Gate-level implementation of a two-word, one-bit synchronous RAM. Two enabled flip-flops store the data; a multiplexer and output flip-flop provide the registered read path.}}{5}{}\protected@file@percent }
+\newlabel{fig:gateram}{{6}{5}{}{figure.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Verification and Experimental Setup}{5}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}RTL Workload and Correctness Checks}{5}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Simulation and trace-based verification results.}}{5}{}\protected@file@percent }
 \newlabel{tab:verification}{{4}{5}{}{table.4}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Matched Experimental Matrix}{5}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Experiment families and base transfer/compute targets in clocks per tile. Tiles contain four operand pairs except in the larger-tile family, which uses 16. Profiles are identical across policies.}}{5}{}\protected@file@percent }
-\newlabel{tab:matrix}{{5}{5}{}{table.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Experimental Results}{5}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}End-to-End Performance}{5}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Loader and MAC execution for Fixed 4 and the proposed controller under the balanced workload. Each interval corresponds to an eight-clock tile operation. The proposed handoffs eliminate the three-clock MAC gap and the one-clock loader handoff gap.}}{6}{}\protected@file@percent }
-\newlabel{fig:handoff}{{5}{6}{}{figure.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces Gate-level implementation of a two-word, one-bit synchronous RAM. Two enabled flip-flops store the data; a multiplexer and output flip-flop provide the registered read path.}}{6}{}\protected@file@percent }
-\newlabel{fig:gateram}{{6}{6}{}{figure.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Experiment families and base transfer/compute targets in clocks per tile. Tiles contain four operand pairs except in the larger-tile family, which uses 16. Profiles are identical across policies.}}{6}{}\protected@file@percent }
+\newlabel{tab:matrix}{{5}{6}{}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Experimental Results}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}End-to-End Performance}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Fixed and Variable Buffering}{6}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.3}Runtime Adaptation and Phase Changes}{6}{}\protected@file@percent }
 \@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Execution cycles for Fixed 4 and the proposed controller under identical per-tile service targets. Reduction is relative to Fixed 4; the average allocation limit refers to the proposed controller.}}{7}{}\protected@file@percent }

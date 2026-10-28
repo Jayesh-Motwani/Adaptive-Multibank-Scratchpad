@@ -186,14 +186,3 @@ the Codex bundled Node and `@oai/artifact-tool` runtime, and was validated
 as a 24-slide deck. The final PPTX is already in `presentation`. The deck
 contains 5 native editable charts, 3 editable tables, and the measured VCD
 mode waveform as an image.
-
-## Published work and comparison boundary
-
-The research notes verify Eyeriss, the datacenter TPU, and Eyeriss v2 against
-original publisher or author-hosted sources. Their frame rates, inferences
-per second, DRAM traffic, and full-system speedups are **qualitative context**
-for this tile-cycle simulation. The only direct comparisons are the internal
-RTL policies under identical workload and hardware assumptions.
-
-This work is an **RTL scratchpad memory architecture study**, not a physical
-SRAM circuit design. No silicon area, timing, or power was measured.
